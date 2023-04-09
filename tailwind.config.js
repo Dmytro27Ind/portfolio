@@ -9,6 +9,9 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        body: ['Inter', 'Lato', 'system-ui', 'sans-serif'],
+      },
       colors: {
         lm: {
           primary: {
@@ -19,16 +22,25 @@ export default {
             500: colors.slate[950],
             contr: colors.gray[50]
           },
+          primaryText: colors.gray[950],
+          secondaryText: colors.gray[500],
         },
         dm: {
           primary: {
             100: colors.white,
             200: colors.slate[50],
             300: colors.slate[50],
-            400: colors.violet[300],
-            500: colors.violet[400],
+            400: colors.slate[300],
+            500: colors.slate[400],
             contr: colors.gray[950]
           },
+          primaryText: colors.gray[50],
+          secondaryText: colors.gray[400],
+          bg: {
+            100: colors.zinc[700],
+            200: colors.zinc[800],
+            300: colors.zinc[900],
+          }
         }
       }
     },

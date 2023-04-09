@@ -1,13 +1,17 @@
-import React, { FC, ReactElement } from 'react'
+import React, { FC } from 'react'
+import { twMerge } from 'tailwind-merge'
 
-interface ButtonGroupProps {
-    children: ReactElement[],
-    className?: string
+interface ButtonGroupProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+    children: React.ReactElement[],
+    className?: string,
+    size?: 'small' | 'medium' | 'large',
 }
 
-const ButtonGroup: FC<ButtonGroupProps> = ({children, className}) => {
+const ButtonGroup: FC<ButtonGroupProps> = ({children, className, size='medium', ...props}) => {
+  const height = { small: 'h-10', medium: 'h-12', large: 'h-18' }
+
   return (
-    <div className={'inline-flex shadow-lg rounded-2xl overflow-hidden ' + (className? className : '')}>
+    <div {...props} className={twMerge('flex shadow-lg rounded-2xl overflow-hidden', height[size], className ?? '')}>
         {children?.map(button => (button))}
     </div>
   )
