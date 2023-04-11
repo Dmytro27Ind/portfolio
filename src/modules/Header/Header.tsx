@@ -7,9 +7,9 @@ import Avatar from '@/UI/Avatar'
 const Header: FC = () => {
   return (
     <React.Fragment>
-      <div className='flex flex-col items-center my-16'>
+      <div className='flex flex-col items-center h-screen justify-center'>
         <Avatar className='w-60 h-60 mb-2' avatar={avatar} />
-        <h1 className='inline-flex text-6xl my-8 text-lm-primaryText dark:text-dm-primaryText'>
+        <h1 className='inline-flex text-6xl my-8 text-lm-primaryText dark:text-dm-primaryText font-nunito'>
           Hi, I'm&nbsp;<div className='font-bold'>Bc. Dmytro Kagirov</div>
         </h1>
         <h2 className='text-4xl text-lm-secondaryText dark:text-dm-secondaryText'>

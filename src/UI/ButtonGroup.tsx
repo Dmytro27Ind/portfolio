@@ -3,7 +3,6 @@ import { twMerge } from 'tailwind-merge'
 
 interface ButtonGroupProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     children: React.ReactElement[],
-    className?: string,
     size?: 'small' | 'medium' | 'large',
 }
 

@@ -1,0 +1,50 @@
+.item {
+  position: relative;
+  display: flex;
+  &:last-child {
+    .content {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.content {
+  flex: 1;
+  position: relative;
+  order: 1;
+
+  &:before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 0;
+    height: 100%;
+    width: 2px;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: calc(0px - 13px);
+    top: 0;
+    width: 25px;
+    height: 25px;
+    z-index: 1;
+    border-radius: 50%;
+  }
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.time {
+  text-align: end;
+  flex: 0 0 150px;
+  min-width: 0;
+  overflow-wrap: break-word;
+  padding-bottom: 1rem;
+}

@@ -9,6 +9,7 @@ import Avatar from './UI/Avatar'
 import Button from './UI/Button'
 import avatar from '@/assets/avatar.png'
 import AboutMe from './modules/AboutMe'
+import Education from './modules/Education'
 
 
 function App() {
@@ -16,12 +17,13 @@ function App() {
   const dispatch = useDispatch()
 
   return (
-    <div className={`font-body ${theme}`}>
+    <div className={`font-inter ${theme}`}>
       <div id='app' className='bg-white dark:bg-dm-bg-300'>
         <AppNavbar />
         <div className='w-10/12 mx-auto'>
           <Header />
           <AboutMe />
+          <Education />
         </div>
         <div className='mt-40 flex'>
           <Button

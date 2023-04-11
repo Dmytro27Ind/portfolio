@@ -10,7 +10,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Inter', 'Lato', 'system-ui', 'sans-serif'],
+        inter: ['Inter', 'Lato', 'system-ui', 'sans-serif'],
+        nunito: ['Nunito', 'Inter', 'Lato', 'system-ui'],
       },
       colors: {
         lm: {
@@ -42,6 +43,10 @@ export default {
             300: colors.zinc[900],
           }
         }
+      },
+      height: {
+        'v-90': '90vh',
+        'v-70': '70vh',
       }
     },
   },

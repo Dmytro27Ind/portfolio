@@ -13,7 +13,7 @@ const AppNavbar = () => {
 
   return (
     <Navbar
-      className='2xl:w-10/12'
+      className='2xl:w-10/12 fixed right-0 left-0 bg-white dark:bg-dm-bg-300 z-10 bg-opacity-50 dark:bg-opacity-70 backdrop-blur-lg'
       leftElement={<img className='w-10 h-10' src={theme === 'dark'? dmLogo : lmLogo} alt="portfolio logo"/>}
       rightElement={
         <ThemeToggle
@@ -26,10 +26,10 @@ const AppNavbar = () => {
       }
     >
       <Link href='#app'>About Me</Link>
-      <Link href='#app'>Contacts</Link>
       <Link href='#app'>Education</Link>
       <Link href='#app'>Skills</Link>
       <Link href='#app'>Projects</Link>
+      <Link href='#app'>Contacts</Link>
     </Navbar>
   )
 }

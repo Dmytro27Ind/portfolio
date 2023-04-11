@@ -1,20 +1,86 @@
-import React, { FC } from 'react'
+import React, { FC, useState, useEffect } from 'react'
 import Calendar from 'react-github-contribution-calendar'
+import axios from 'axios';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
+
+interface GithubUserData {
+  user: {
+    contributionsCollection: {
+      contributionCalendar: {
+        totalContributions: number,
+        weeks: []
+      }
+    }
+  }
+}
+
+function getDateNow() {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  const day = String(today.getDate()).padStart(2, '0');
+  const formattedDate = `${year}-${month}-${day}`;
+  return formattedDate
+}
 
 const GithubCalendar: FC = () => {
-  let until = '2016-06-30';
-  let values = {
-    '2016-06-23': 1,
-    '2016-06-26': 2,
-    '2016-06-27': 3,
-    '2016-06-28': 4,
-    '2016-06-29': 4
+  const theme = useSelector<RootState>((state) => state.theme.theme)
+  const [data, setData] = useState<GithubUserData>();
+  const [values, setValues] = useState<any>({});
+  const [total, setTotal] = useState<number>(0)
+  let until = getDateNow();
+  var panelAttributes = { 'rx': 6, 'ry': 6 };
+  var panelColorsLm = ['#e4e4e7', '#94a3b8', '#64748b', '#475569', '#334155' ];
+  var panelColorsDm = ['#27272a', '#71717a', '#71717a', '#a1a1aa', '#a1a1aa' ];
+  var monthLabelAttributes = {
+    'style': {
+      'font-size': 11,
+      'fill': '#AAA'
+    }
   };
-  let weekNames = ['s', 'm', 't', 'w', 't', 'f', 's'];
-  
+  var weekLabelAttributes = monthLabelAttributes;
+
+  useEffect(() => {
+    axios.get('https://nodejs-fetch-service.onrender.com/api/portfolio/git/contributions', {
+      headers: {
+        'Access-Control-Allow-Origin': "*",
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'
+      }
+    })
+      .then(response => setData(response.data))
+      .catch(error => console.error(error));
+  }, [])
+
+  useEffect(() => {
+    if(data) {
+      const { weeks, totalContributions } = data.user.contributionsCollection.contributionCalendar;
+      setTotal(totalContributions)
+      let temp: any = {}
+      weeks.forEach((week: { contributionDays: []}) => {
+        week.contributionDays.forEach((day: {date: string, contributionCount: number}) => {
+          temp[day.date] = day.contributionCount
+        })
+      })
+      setValues(temp)
+    }
+  }, [data])
 
   return (
-    <Calendar values={values} until={until} weekLabelAttributes={weekNames} monthLabelAttributes={undefined} panelAttributes={undefined} />
+    <React.Fragment>
+      <Calendar
+        values={values}
+        until={until}
+        panelColors={theme === 'dark'? panelColorsDm : panelColorsLm }
+        weekLabelAttributes={weekLabelAttributes}
+        monthLabelAttributes={monthLabelAttributes}
+        panelAttributes={panelAttributes}
+      />
+      <h3 className='text-lm-secondaryText dark:text-dm-secondaryText text-lg mt-6 self-center'>
+        Total Contributions {total}
+      </h3>
+    </React.Fragment>
   )
 }
 
