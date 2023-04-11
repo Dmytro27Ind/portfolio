@@ -32,7 +32,7 @@ const GithubCalendar: FC = () => {
   let until = getDateNow();
   var panelAttributes = { 'rx': 6, 'ry': 6 };
   var panelColorsLm = ['#e4e4e7', '#94a3b8', '#64748b', '#475569', '#334155' ];
-  var panelColorsDm = ['#27272a', '#71717a', '#71717a', '#a1a1aa', '#a1a1aa' ];
+  var panelColorsDm = ['#3f3f4688', '#71717a', '#71717a', '#a1a1aa', '#a1a1aa' ];
   var monthLabelAttributes = {
     'style': {
       'font-size': 11,

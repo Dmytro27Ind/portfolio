@@ -1,15 +1,38 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect  } from 'react'
 import GithubCalendar from './GithubCalendar'
 import gitContrLm from '@/assets/lm-github-contr.png'
 import gitContrDm from '@/assets/dm-github-contr.png'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/store'
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const AboutMe: FC = () => {
   const theme = useSelector<RootState>((state) => state.theme.theme)
+  const control = useAnimation()
+  const [ref, inView] = useInView()
+
+  const variant = {
+    visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5 }},
+    hidden: { opacity: 0, scale: 0.85, y: 50 },
+  }
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible")
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView])
 
   return (
-    <div className='flex justify-evenly mt-16 mb-52'>
+    <motion.div
+      className='flex justify-evenly mt-16 mb-52'
+      ref={ref}
+      variants={variant}
+      initial="hidden"
+      animate={control}
+    >
       <div className='w-4/12 flex flex-col gap-y-14'>
         <h2 className='h2-title'>
           I love building web applications
@@ -26,7 +49,7 @@ const AboutMe: FC = () => {
           <GithubCalendar />
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

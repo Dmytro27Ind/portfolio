@@ -3,11 +3,17 @@ import { RiContactsBook2Fill } from 'react-icons/ri'
 import Button from '@/UI/Button'
 import avatar from '@/assets/avatar.png'
 import Avatar from '@/UI/Avatar'
+import { motion } from "framer-motion";
 
 const Header: FC = () => {
   return (
     <React.Fragment>
-      <div className='flex flex-col items-center h-screen justify-center'>
+      <motion.div
+        className='flex flex-col items-center h-screen justify-center'
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+      >
         <Avatar className='w-60 h-60 mb-2' avatar={avatar} />
         <h1 className='inline-flex text-6xl my-8 text-lm-primaryText dark:text-dm-primaryText font-nunito'>
           Hi, I'm&nbsp;<div className='font-bold'>Bc. Dmytro Kagirov</div>
@@ -18,7 +24,7 @@ const Header: FC = () => {
         <Button size='large' className='my-10 text-lg' leftIcon={<RiContactsBook2Fill className='w-5 h-5' />}>
           Connect With Me
         </Button>
-      </div>
+      </motion.div>
     </React.Fragment>
   )
 }
