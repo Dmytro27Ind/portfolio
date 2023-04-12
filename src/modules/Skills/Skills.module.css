@@ -1,0 +1,11 @@
+.li {
+    list-style: none;
+}
+
+
+.li:before {
+    content:"· ";
+    font-size:40px;
+    vertical-align:middle;
+    line-height:20px;
+}

@@ -1,103 +1,47 @@
 import React from 'react'
-import { RiContactsBook2Fill } from 'react-icons/ri'
-import { useDispatch, useSelector } from 'react-redux'
-import ThemeToggle from './components/ThemeToggle'
+import { useSelector } from 'react-redux'
+import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 import AppNavbar from './modules/AppNavbar/AppNavbar'
 import Header from './modules/Header'
-import { RootState, setDark, setLight } from './store'
-import Avatar from './UI/Avatar'
-import Button from './UI/Button'
-import avatar from '@/assets/avatar.png'
+import { RootState } from './store'
 import AboutMe from './modules/AboutMe'
 import Education from './modules/Education'
+import Skills from './modules/Skills'
+import whiteCube from '@/assets/white-cube.png'
+import whiteCube2 from '@/assets/white-cube-2.png'
+import whiteCircle from '@/assets/white-circle.png'
+import blackCube from '@/assets/black-cube.png'
+import blackCube2 from '@/assets/black-cube-2.png'
+import blackCircle from '@/assets/black-circle.png'
 
 
 function App() {
   const theme = useSelector<RootState>((state) => state.theme.theme)
-  const dispatch = useDispatch()
 
   return (
-    <div className={`font-inter ${theme}`}>
-      <div id='app' className='bg-white dark:bg-dm-bg-300'>
+    <ParallaxProvider>
+      <div id='app' className={`font-inter ${theme} relative`}>
         <AppNavbar />
         <div className='w-10/12 mx-auto'>
           <Header />
           <AboutMe />
           <Education />
+          <Skills />
+          <div className='h-1'></div>
         </div>
-        <div className='mt-40 flex'>
-          <Button
-            size='small'
-            className='m-5 text-sm'
-            leftIcon={<RiContactsBook2Fill className='w-4 h-4' />}
-          >
-            Connect With Me
-          </Button>
-          <Button
-            size='medium'
-            className='m-5 text-base'
-            leftIcon={<RiContactsBook2Fill className='w-4 h-4' />}
-          >
-            Connect With Me
-          </Button>
-          <Button
-            size='large'
-            className='m-5 text-lg'
-            leftIcon={<RiContactsBook2Fill className='w-5 h-5' />}
-          >
-            Connect With Me
-          </Button>
-        </div>
-        <div className='flex'>
-          <ThemeToggle
-            className='m-5 text-sm'
-            onDarkClick={() => dispatch(setDark())}
-            onLightClick={() => dispatch(setLight())}
-            size='small'
-          />
-          <ThemeToggle
-            className='m-5 text-base'
-            onDarkClick={() => dispatch(setDark())}
-            onLightClick={() => dispatch(setLight())}
-            size='medium'
-          />
-          <ThemeToggle
-            className='m-5 text-lg'
-            onDarkClick={() => dispatch(setDark())}
-            onLightClick={() => dispatch(setLight())}
-            size='large'
-          />
-        </div>
-        <div className='flex'>
-          <ThemeToggle
-            className='m-5 text-sm'
-            onDarkClick={() => dispatch(setDark())}
-            onLightClick={() => dispatch(setLight())}
-            size='small'
-            hideText
-          />
-          <ThemeToggle
-            className='m-5 text-base'
-            onDarkClick={() => dispatch(setDark())}
-            onLightClick={() => dispatch(setLight())}
-            size='medium'
-            hideText
-          />
-          <ThemeToggle
-            className='m-5 text-lg'
-            onDarkClick={() => dispatch(setDark())}
-            onLightClick={() => dispatch(setLight())}
-            size='large'
-            hideText
-          />
-        </div>
-        <div className='flex'>
-          <Avatar className='m-5' avatar={avatar} size='small'/>
-          <Avatar className='m-5' avatar={avatar} size='medium'/>
-          <Avatar className='m-5' avatar={avatar} size='large'/>
+        <div className='absolute top-0 left-0 right-0 bottom-0 -z-10 bg-white dark:bg-dm-bg-300'>
+          <Parallax speed={-25} scale={[0.75, 1]}>
+            <img className='mt-[400px] ml-20 w-44 opacity-6' src={theme === 'dark'? blackCircle : whiteCircle} alt="black circle" />
+          </Parallax>
+          <Parallax className='ml-[95%] w-fit' speed={-40} scale={[1.1, 0.7]} translateX={['-200px', '0px']}>
+            <img className='mt-[800px] w-28 opacity-6 blur-[2px]' src={theme === 'dark'? blackCube : whiteCube} alt="black cube" />
+          </Parallax>
+          <Parallax className='ml-32 w-fit' speed={-25} rotate={[-270, 0]}>
+            <img className='mt-[1200px] w-44 opacity-6' src={theme === 'dark'? blackCube2 : whiteCube2} alt="black cube" />
+          </Parallax>
         </div>
       </div>
-    </div>
+    </ParallaxProvider>
   )
 }
 

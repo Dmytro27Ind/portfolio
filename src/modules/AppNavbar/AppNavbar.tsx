@@ -12,25 +12,27 @@ const AppNavbar = () => {
   const dispatch = useDispatch()
 
   return (
-    <Navbar
-      className='2xl:w-10/12 fixed right-0 left-0 bg-white dark:bg-dm-bg-300 z-10 bg-opacity-50 dark:bg-opacity-70 backdrop-blur-lg'
-      leftElement={<img className='w-10 h-10' src={theme === 'dark'? dmLogo : lmLogo} alt="portfolio logo"/>}
-      rightElement={
-        <ThemeToggle
-          className='h-10'
-          onDarkClick={() => dispatch(setDark())}
-          onLightClick={() => dispatch(setLight())}
-          size='small'
-          hideText
-        />
-      }
-    >
-      <Link href='#app'>About Me</Link>
-      <Link href='#app'>Education</Link>
-      <Link href='#app'>Skills</Link>
-      <Link href='#app'>Projects</Link>
-      <Link href='#app'>Contacts</Link>
-    </Navbar>
+    <div className='fixed right-0 left-0 z-10 bg-white dark:bg-dm-bg-300 bg-opacity-50 dark:bg-opacity-70 backdrop-blur-lg'>
+      <Navbar
+        className='2xl:w-10/12'
+        leftElement={<img className='w-10 h-10' src={theme === 'dark'? dmLogo : lmLogo} alt="portfolio logo"/>}
+        rightElement={
+          <ThemeToggle
+            className='h-10'
+            onDarkClick={() => dispatch(setDark())}
+            onLightClick={() => dispatch(setLight())}
+            size='small'
+            hideText
+          />
+        }
+      >
+        <Link href='#app'>About Me</Link>
+        <Link href='#app'>Education</Link>
+        <Link href='#app'>Skills</Link>
+        <Link href='#app'>Projects</Link>
+        <Link href='#app'>Contacts</Link>
+      </Navbar>
+    </div>
   )
 }
 
