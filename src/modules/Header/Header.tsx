@@ -1,9 +1,10 @@
 import React, { FC } from 'react'
-import { RiContactsBook2Fill } from 'react-icons/ri'
-import Button from '@/UI/Button'
 import avatar from '@/assets/avatar.png'
 import Avatar from '@/UI/Avatar'
 import { motion } from "framer-motion";
+import IconButton from '@/UI/IconButton/IconButton'
+import { BsGithub, BsLinkedin, BsFacebook } from 'react-icons/bs'
+import Chip from '@/UI/Chip'
 
 const Header: FC = () => {
   return (
@@ -19,11 +20,25 @@ const Header: FC = () => {
           Hi, I'm&nbsp;<div className='font-bold'>Bc. Dmytro Kagirov</div>
         </h1>
         <h2 className='text-4xl text-lm-secondaryText dark:text-dm-secondaryText'>
-          Web Developer, Student
+          Full Stack Developer, Student
         </h2>
-        <Button size='large' className='my-10 text-lg' leftIcon={<RiContactsBook2Fill className='w-5 h-5' />}>
-          Connect With Me
-        </Button>
+        <div className='flex gap-1 mt-12'>
+          <Chip>
+            <h2 className='text-base font-light'>
+              dmytro27kagirov@gmail.com
+            </h2>
+          </Chip>
+          <Chip>
+            <h2 className='text-base font-light'>
+              +421 951 338 470
+            </h2>
+          </Chip>
+        </div>
+        <div className='flex gap-3 mt-4'>
+          <IconButton href='https://github.com/Dmytro27Ind' newTab icon={<BsGithub className='w-8 h-8' />} />
+          <IconButton href='https://www.linkedin.com/in/dmytro-kagirov-a29394266/' newTab icon={<BsLinkedin className='w-8 h-8' />} />
+          <IconButton href='https://www.facebook.com/dmytro.kagirov.1' newTab icon={<BsFacebook className='w-8 h-8' />} />
+        </div>
       </motion.div>
     </React.Fragment>
   )

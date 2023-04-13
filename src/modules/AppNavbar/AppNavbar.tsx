@@ -26,11 +26,10 @@ const AppNavbar = () => {
           />
         }
       >
-        <Link href='#app'>About Me</Link>
-        <Link href='#app'>Education</Link>
-        <Link href='#app'>Skills</Link>
-        <Link href='#app'>Projects</Link>
-        <Link href='#app'>Contacts</Link>
+        <Link href='#about-me'>About Me</Link>
+        <Link href='#education'>Education</Link>
+        <Link href='#skills'>Skills</Link>
+        <Link href='#projects'>Projects</Link>
       </Navbar>
     </div>
   )

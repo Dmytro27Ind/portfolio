@@ -27,7 +27,8 @@ const AboutMe: FC = () => {
 
   return (
     <motion.div
-      className='flex justify-evenly mt-16 mb-52'
+      id='about-me'
+      className='flex justify-evenly mt-16 mb-52 scroll-mt-[35vh]'
       ref={ref}
       variants={variant}
       initial="hidden"

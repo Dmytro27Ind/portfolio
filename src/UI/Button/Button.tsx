@@ -29,7 +29,8 @@ const Button: FC<ButtonProps> = ({children, className, leftIcon, rightIcon, notR
         'dark:text-dm-primary-contr text-lm-primary-contr bg-lm-primary-300 dark:bg-dm-primary-300',
         'hover:bg-lm-primary-200 hover:dark:bg-dm-primary-400 active:bg-lm-primary-100 active:dark:bg-dm-primary-500',
         'transition ease-in-out hover:scale-105 duration-300',
-        paddings[size], gap[size], height[size], rounded, classes)}
+        paddings[size], gap[size], height[size], rounded, classes)
+      }
       onClick={click}
     >
       {leftIcon}

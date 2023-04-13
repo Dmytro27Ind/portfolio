@@ -42,7 +42,8 @@ const Education: FC = () => {
   return (
     <React.Fragment>
       <motion.div
-        className='flex flex-col items-center mb-24'
+        id='education'
+        className='flex flex-col items-center mb-24 scroll-mt-[35vh]'
         variants={variant}
         animate={control}
       >

@@ -4,10 +4,10 @@ import FrontendSkills from './FrontendSkills'
 
 const Skills: FC = () => {
   return (
-    <React.Fragment>
+    <div id='skills' className='scroll-mt-[10vh]'>
       <FrontendSkills />
       <BackendSkills />
-    </React.Fragment>
+    </div>
   )
 }
 
