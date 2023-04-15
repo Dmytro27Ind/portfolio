@@ -17,6 +17,18 @@ const MyProjects = () => {
       ]
     },
     {
+      title: 'Portfolio',
+      description: 'This project is my portfolio with a short cv and my projects at the end. Also this project uses github API.',
+      link: 'https://dmytro27ind.github.io/portfolio/',
+      git: 'https://github.com/Dmytro27Ind/portfolio',
+      tags: ['React', 'TypeScript', 'Tailwind', 'Redux'],
+      images: [
+        { img: 'https://raw.githubusercontent.com/Dmytro27Ind/images/main/portfolio-1.PNG' },
+        { img: 'https://raw.githubusercontent.com/Dmytro27Ind/images/main/portfolio-2.PNG' },
+      ],
+      left: true,
+    },
+    {
       title: 'React Food Delivery',
       description: 'This is a website prototype for selling and delivering fast food.',
       link: 'https://dmytro27ind.github.io/react-food-delivery/',
@@ -28,7 +40,6 @@ const MyProjects = () => {
         { img: 'https://raw.githubusercontent.com/Dmytro27Ind/images/main/react-food-delivery-3.PNG', maxH: '500' },
         { img: 'https://raw.githubusercontent.com/Dmytro27Ind/images/main/react-food-delivery-4.PNG', maxH: '500' },
       ],
-      left: true,
     },
     {
       title: 'City Desk',
@@ -40,7 +51,8 @@ const MyProjects = () => {
         { img: 'https://raw.githubusercontent.com/Dmytro27Ind/images/main/city-desk-2.jpg', maxH: '500' },
         { img: 'https://raw.githubusercontent.com/Dmytro27Ind/images/main/city-desk-3.jpg', maxH: '500' },
         { img: 'https://raw.githubusercontent.com/Dmytro27Ind/images/main/city-desk-4.jpg', maxH: '500' },
-      ]
+      ],
+      left: true,
     },
   ]
   return (

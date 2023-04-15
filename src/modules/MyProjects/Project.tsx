@@ -76,7 +76,7 @@ const Project: FC<ProjectProps> = ({title, description, link, git, tags, images,
         >
           {images.map((img, ind) =>
             <div key={ind} className='flex items-center justify-center w-full h-full'>
-              <img className={img.maxH? `max-h-[${img.maxH}px] ` : ''} src={img.img} alt='project screenshot'/>
+              <img style={{maxHeight: (img.maxH? `${img.maxH}px` : '')}} src={img.img} alt='project screenshot'/>
             </div>
           )}
         </Carousel>
