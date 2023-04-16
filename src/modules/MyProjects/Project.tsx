@@ -60,7 +60,7 @@ const Project: FC<ProjectProps> = ({title, description, link, git, tags, images,
         }
         <div className='flex gap-1 mt-8'>
             {tags.map((tag, ind) =>
-              <Chip key={ind}>{tag}</Chip>
+              <Chip className='dark:font-semibold' key={ind}>{tag}</Chip>
             )}
         </div>
       </div>

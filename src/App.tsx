@@ -24,7 +24,7 @@ function App() {
           <Education />
           <Skills />
           <MyProjects />
-          <div className='h-1'></div>    {/* _______________________________________________ */}
+          <div className='h-1'></div>
         </div>
         <ParallaxBg />
       </div>

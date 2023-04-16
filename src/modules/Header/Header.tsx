@@ -24,12 +24,12 @@ const Header: FC = () => {
         </h2>
         <div className='flex gap-1 mt-12'>
           <Chip>
-            <h2 className='text-base font-light dark:font-normal'>
+            <h2 className='text-base font-normal dark:font-semibold'>
               dmytro27kagirov@gmail.com
             </h2>
           </Chip>
           <Chip>
-            <h2 className='text-base font-light dark:font-normal'>
+            <h2 className='text-base font-normal dark:font-semibold'>
               +421 951 338 470
             </h2>
           </Chip>
