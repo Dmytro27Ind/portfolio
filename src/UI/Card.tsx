@@ -7,7 +7,7 @@ interface CardProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HT
 
 const Card: FC<CardProps> = ({className, children, ...props}) => {
   return (
-    <div {...props} className={twMerge("shadow-lg rounded-2xl dark:bg-dm-bg-200", className)}>
+    <div {...props} className={twMerge("shadow-lg rounded-2xl bg-white dark:bg-dm-bg-200", className)}>
         {children}
     </div>
   )

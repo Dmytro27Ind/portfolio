@@ -5,7 +5,7 @@
 
 @layer components {
   .h2-title {
-    @apply text-lm-primaryText dark:text-dm-primaryText font-nunito text-5xl font-semibold;
+    @apply text-lm-primaryText dark:text-dm-primaryText font-nunito text-3xl md:text-4xl lg:text-5xl font-semibold;
   }
 }
 

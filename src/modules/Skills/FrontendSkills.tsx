@@ -16,6 +16,7 @@ const FrontendSkills: FC = () => {
   const control = useAnimation()
   const [refInitial, inViewInitial] = useInView()
   const [ref, inView] = useInView()
+  const [refStyling, inViewStyling] = useInView()
 
   const variant = {
     visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5 }},
@@ -25,42 +26,42 @@ const FrontendSkills: FC = () => {
   useEffect(() => {
     if (inViewInitial || inView) {
       control.start("visible")
-    } else if (!inViewInitial && !inView) {
+    } else if (!inViewInitial && !inView && !inViewStyling) {
       control.start("hidden");
     }
-  }, [control, inView, inViewInitial])
+  }, [control, inView, inViewInitial, inViewStyling])
 
   return (
     <motion.div
-      className='mb-28 flex flex-col items-center'
+      className='mb-12 sm:mb-28 flex flex-col items-center'
       variants={variant}
       animate={control}
     >
-      <h2 className='h2-title mb-20'>Frontend Skills</h2>
+      <h2 className='h2-title mb-10 md:mb-20'>Frontend Skills</h2>
       <motion.div ref={refInitial}></motion.div>
-      <div className='flex gap-5 flex-wrap max-w-3xl justify-center'>
-        <Card className='p-6 flex flex-col gap-y-2 h-fit self-end border-t border-gray-100 dark:border-transparent text-lm-primaryText dark:text-dm-primaryText'>
+      <div className='flex flex-col sm:flex-row w-full sm:w-auto gap-2 md:gap-5 flex-wrap max-w-3xl justify-center'>
+        <Card className='p-4 sm:p-6 flex flex-col items-center gap-y-2 h-fit sm:self-end border-t border-gray-100 dark:border-transparent text-lm-primaryText dark:text-dm-primaryText'>
           <h2 className='text-xl font-semibold text-center'>Basic</h2>
           <ul>
             <li className={classes.li}>HTML</li>
             <li className={classes.li}>CSS</li>
           </ul>
         </Card>
-        <Card className='p-8 flex flex-col gap-y-6 h-fit border-t border-gray-100 dark:border-transparent text-lm-primaryText dark:text-dm-primaryText'>
-          <h2 className='text-3xl font-semibold text-center'>Frameworks</h2>
+        <Card className='p-4 sm:p-8 flex flex-col items-center gap-y-6 h-fit border-t border-gray-100 dark:border-transparent text-lm-primaryText dark:text-dm-primaryText'>
+          <h2 className='text-2xl md:text-3xl font-semibold text-center'>Frameworks</h2>
           <div className='flex gap-x-5 text-lg'>
             <div className='flex flex-col gap-y-3 items-center'>
-              <img className='w-20 h-20' src={angularIcon} alt="Angular Logo" />
+              <img className='w-14 h-14 sm:w-20 sm:h-20' src={angularIcon} alt="Angular Logo" />
               <p>Angular</p>
             </div>
             <div className='flex flex-col gap-y-3 items-center'>
-              <img className='w-20 h-20' src={reactIcon} alt="React Logo" />
+              <img className='w-14 h-14 sm:w-20 sm:h-20' src={reactIcon} alt="React Logo" />
               <p>React</p>
             </div>
           </div>
         </Card>
-        <Card className='p-6 flex flex-col gap-y-2 h-fit self-end border-t border-gray-100 dark:border-transparent text-lm-primaryText dark:text-dm-primaryText'>
-          <h2 className='text-xl font-semibold text-center'>Styling</h2>
+        <Card className='p-4 sm:p-6 flex flex-col items-center gap-y-2 h-auto justify-center md:h-fit md:self-end border-t border-gray-100 dark:border-transparent text-lm-primaryText dark:text-dm-primaryText'>
+          <h2 ref={refStyling} className='text-xl font-semibold text-center'>Styling</h2>
           <ul>
             <li className={classes.li}>scss / sass</li>
             <li className={classes.li}>tailwind</li>
@@ -68,21 +69,21 @@ const FrontendSkills: FC = () => {
             <li className={classes.li}>emotion</li>
           </ul>
         </Card>
-        <Card className='p-8 flex flex-col gap-y-6 h-fit border-t border-gray-100 dark:border-transparent text-lm-primaryText dark:text-dm-primaryText'>
-          <h2 className='text-3xl font-semibold text-center'>Languages</h2>
+        <Card className='p-4 sm:p-8 flex flex-col items-center gap-y-6 h-fit border-t border-gray-100 dark:border-transparent text-lm-primaryText dark:text-dm-primaryText'>
+          <h2 className='text-2xl md:text-3xl font-semibold text-center'>Languages</h2>
           <div className='flex gap-x-5 text-lg'>
             <div className='flex flex-col gap-y-3 items-center'>
-              <img className='w-16 h-16 rounded-xl' src={jsIcon} alt="JavaScript Logo" />
+              <img className='w-11 h-11 sm:w-16 sm:h-16 rounded-xl' src={jsIcon} alt="JavaScript Logo" />
               <p>JavaScript</p>
             </div>
             <div className='flex flex-col gap-y-3 items-center'>
-              <img className='w-16 h-16 rounded-xl' src={tsIcon} alt="TypeScript Logo" />
+              <img className='w-11 h-11 sm:w-16 sm:h-16 rounded-xl' src={tsIcon} alt="TypeScript Logo" />
               <p>TypeScript</p>
             </div>
           </div>
         </Card>
-        <div className='flex flex-col gap-5 relative'>
-          <Card className='p-7 flex flex-col gap-y-2 h-fit border-t border-gray-100 dark:border-transparent text-lm-primaryText dark:text-dm-primaryText'>
+        <div className='flex flex-col items-center gap-2 md:gap-5 relative'>
+          <Card className='p-4 sm:p-7 flex flex-col items-center gap-y-2 w-full sm:w-auto h-fit border-t border-gray-100 dark:border-transparent text-lm-primaryText dark:text-dm-primaryText'>
             <h2 className='text-xl font-semibold text-center'>State Management</h2>
             <ul>
               <li className={classes.li}>Redux Toolkit</li>
@@ -90,8 +91,8 @@ const FrontendSkills: FC = () => {
               <li className={classes.li}>Zustand</li>
             </ul>
           </Card>
-          <motion.div className='absolute top-32' ref={ref}></motion.div>
-          <Card className='p-6 flex flex-col self-start gap-y-2 h-fit border-t border-gray-100 dark:border-transparent text-lm-primaryText dark:text-dm-primaryText'>
+          <div className='absolute top-32' ref={ref}></div>
+          <Card className='p-4 sm:p-6 flex flex-col items-center sm:items-start sm:self-start gap-y-2 w-full sm:w-auto h-fit border-t border-gray-100 dark:border-transparent text-lm-primaryText dark:text-dm-primaryText'>
             <h2 className='text-xl font-semibold text-center'>Bundlers</h2>
             <div className='flex items-center gap-3'>
               <img className='w-10 h-10' src={webpackIcon} alt="Webpack Logo" />
@@ -103,7 +104,7 @@ const FrontendSkills: FC = () => {
             </div>
           </Card>
         </div>
-        <Card className='p-6 flex flex-col gap-y-2 h-fit border-t border-gray-100 dark:border-transparent text-lm-primaryText dark:text-dm-primaryText'>
+        <Card className='z-[1] p-4 sm:p-6 flex flex-col items-center gap-y-2 h-fit border-t border-gray-100 dark:border-transparent text-lm-primaryText dark:text-dm-primaryText'>
           <h2 className='text-xl font-semibold text-center'>UI libraries</h2>
           <div className='flex items-center gap-3'>
             <img className='w-10 h-10' src={muiIcon} alt="Material UI Logo" />

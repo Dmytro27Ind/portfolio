@@ -58,7 +58,7 @@ const Project: FC<ProjectProps> = ({title, description, link, git, tags, images,
             Link to Website
           </Link>
         }
-        <div className='flex gap-1 mt-8'>
+        <div className='flex gap-1 mt-8 flex-wrap'>
             {tags.map((tag, ind) =>
               <Chip className='dark:font-semibold' key={ind}>{tag}</Chip>
             )}

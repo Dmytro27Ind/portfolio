@@ -35,7 +35,7 @@ const GithubCalendar: FC = () => {
   var panelColorsDm = ['#3f3f4688', '#71717a', '#71717a', '#a1a1aa', '#a1a1aa' ];
   var monthLabelAttributes = {
     'style': {
-      'font-size': 11,
+      'fontSize': 11,
       'fill': '#AAA'
     }
   };
@@ -77,7 +77,7 @@ const GithubCalendar: FC = () => {
         monthLabelAttributes={monthLabelAttributes}
         panelAttributes={panelAttributes}
       />
-      <h3 className='text-lm-secondaryText dark:text-dm-secondaryText text-lg mt-6 self-center'>
+      <h3 className='text-lm-secondaryText dark:text-dm-secondaryText text-base md:text-lg mt-6 self-center'>
         Total Contributions {total}
       </h3>
     </React.Fragment>

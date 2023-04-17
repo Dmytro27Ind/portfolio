@@ -27,7 +27,7 @@ const Stepper: FC<StepperProps> = ({items, className, ...props}) => {
               {item.description}
             </p>
           </div>
-          <time className={classes.time + " text-lm-secondaryText dark:text-dm-secondaryText"}>
+          <time className={classes.time + " text-lm-secondaryText dark:text-dm-secondaryText basis-16 sm:basis-36 text-left sm:text-right"}>
             {item.time}
           </time>
         </li>

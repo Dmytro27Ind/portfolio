@@ -15,20 +15,21 @@ const Header: FC = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
       >
-        <Avatar className='w-60 h-60 mb-2' avatar={avatar} />
-        <h1 className='inline-flex text-6xl my-8 text-lm-primaryText dark:text-dm-primaryText font-nunito'>
-          Hi, I'm&nbsp;<div className='font-bold'>Bc. Dmytro Kagirov</div>
+        <Avatar className='w-40 h-40 md:w-60 md:h-60 mb-0 md:mb-2' avatar={avatar} />
+        <h1 className='block text-center md:inline-flex text-3xl md:text-5xl lg:text-6xl my-5 md:my-8 text-lm-primaryText dark:text-dm-primaryText font-nunito'>
+          <p className='hidden md:block'>Hi, I'm&nbsp;</p>
+          <div className='font-bold'>Bc. Dmytro Kagirov</div>
         </h1>
-        <h2 className='text-4xl text-lm-secondaryText dark:text-dm-secondaryText'>
+        <h2 className='font-semibold md:font-normal text-xl md:text-3xl lg:text-4xl text-lm-secondaryText dark:text-dm-secondaryText'>
           Full Stack Developer, Student
         </h2>
-        <div className='flex gap-1 mt-12'>
-          <Chip>
+        <div className='flex items-center flex-col md:flex-row gap-2 md:gap-1 mt-12'>
+          <Chip className='w-fit'>
             <h2 className='text-base font-normal dark:font-semibold'>
               dmytro27kagirov@gmail.com
             </h2>
           </Chip>
-          <Chip>
+          <Chip className='w-fit'>
             <h2 className='text-base font-normal dark:font-semibold'>
               +421 951 338 470
             </h2>

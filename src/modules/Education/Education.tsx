@@ -43,11 +43,11 @@ const Education: FC = () => {
     <React.Fragment>
       <motion.div
         id='education'
-        className='flex flex-col items-center mb-24 scroll-mt-[35vh]'
+        className='flex flex-col items-center mb-4 sm:mb-24 scroll-mt-[35vh]'
         variants={variant}
         animate={control}
       >
-        <h2 className='h2-title mb-20'>Education</h2>
+        <h2 className='h2-title mb-12 sm:mb-20'>Education</h2>
         <motion.div ref={ref}></motion.div>
         <Stepper items={items} />
       </motion.div>
