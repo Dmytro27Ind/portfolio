@@ -28,7 +28,7 @@ const Experience: FC = () => {
 
   const items: StepperItem[] = [
     {
-      time: '1+ year',
+      time: '1 year',
       title: 'Full Stack Developer',
       description: 'Freelance. Depending on the project, I was responsible for the frontend, backend and design. Frontend in React or native HTML/CSS. Backend in NodeJS/Express, design in Figma.'
     }
