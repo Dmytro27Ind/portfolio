@@ -30,7 +30,7 @@ const FrontendSkills: FC = () => {
 
   return (
     <motion.div
-      className='mb-40 flex flex-col items-center'
+      className='mb-20 md:mb-40 flex flex-col items-center'
       variants={variant}
       animate={control}
     >

@@ -15,8 +15,8 @@ const Stepper: FC<StepperProps> = ({items, className, ...props}) => {
   return (
     <ol {...props} className={className}>
       {items.map((item, ind) =>
-        <li key={ind} className={classes.item + " gap-8"}>
-          <div className={classes.content + " pl-8 pb-16" +
+        <li key={ind} className={classes.item + " gap-8 justify-center"}>
+          <div className={classes.content + " pl-8 pb-16 md:w-4/6 lg:w-3/6" +
             " before:bg-lm-primary-100 after:bg-lm-primary-100 after:border-lm-primary-100" +
             " before:dark:bg-dm-primary-100 after:dark:bg-dm-primary-100 after:dark:border-dm-primary-100"
           }>

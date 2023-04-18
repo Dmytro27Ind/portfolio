@@ -9,6 +9,7 @@ import Education from './modules/Education'
 import Skills from './modules/Skills'
 import ParallaxBg from './modules/ParallaxBg';
 import MyProjects from './modules/MyProjects';
+import Experience from './modules/Experience';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <div className='w-10/12 mx-auto'>
           <Header />
           <AboutMe />
+          <Experience />
           <Education />
           <Skills />
           <MyProjects />

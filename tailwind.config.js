@@ -36,7 +36,7 @@ export default {
             contr: colors.gray[950]
           },
           primaryText: colors.gray[50],
-          secondaryText: colors.gray[400],
+          secondaryText: colors.gray[300],
           bg: {
             100: colors.zinc[700],
             200: colors.zinc[800],

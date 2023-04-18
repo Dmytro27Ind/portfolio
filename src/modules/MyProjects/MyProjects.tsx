@@ -1,8 +1,23 @@
 import React from 'react'
 import Project, { ProjectProps } from './Project'
+import vs1 from '@/assets/vs1.png'
+import vs2 from '@/assets/vs2.png'
+import vs3 from '@/assets/vs3.png'
 
 const MyProjects = () => {
   const projects: ProjectProps[] = [
+    {
+      title: 'Viibes Study',
+      description: 'The project for admission to Slovakia is free for foreign students. I worked as a freelancer on this project.',
+      link: 'https://viibes.study/',
+      tags: ['html', 'css', 'scss', 'js'],
+      images: [
+        { img: vs1 },
+        { img: vs2 },
+        { img: vs3 },
+      ],
+      left: true,
+    },
     {
       title: 'React Music Player',
       description: 'This is a music player written in React using libraries such as Redux and MUI for UI elements. This web application also uses the Spotify API.',
@@ -57,8 +72,8 @@ const MyProjects = () => {
   ]
   return (
     <div id='projects' className='my-8 flex flex-col items-center mb-40'>
-      <h2 className='h2-title mb-24'>Projects</h2>
-      <div className='flex flex-col gap-32'>
+      <h2 className='h2-title mb-12 sm:mb-24'>Projects</h2>
+      <div className='flex flex-col gap-24 sm:gap-32'>
         {projects.map((project, ind) =>
           <Project key={ind}
             title={project.title}
