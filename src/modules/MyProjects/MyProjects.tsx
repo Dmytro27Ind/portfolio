@@ -3,6 +3,8 @@ import Project, { ProjectProps } from './Project'
 import vs1 from '@/assets/vs1.png'
 import vs2 from '@/assets/vs2.png'
 import vs3 from '@/assets/vs3.png'
+import lv1 from '@/assets/livesta-1.png'
+import lv2 from '@/assets/livesta-2.png'
 
 const MyProjects = () => {
   const projects: ProjectProps[] = [
@@ -15,6 +17,17 @@ const MyProjects = () => {
         { img: vs1 },
         { img: vs2 },
         { img: vs3 },
+      ],
+    },
+    {
+      title: 'Livesta Center',
+      description: 'This is a website for cosmetics firm advertising and registration. Also implemented own admin panel for content management',
+      link: 'https://livesta.vercel.app/',
+      git: 'https://github.com/Dmytro27Ind/livesta-next-js',
+      tags: ['Next.js', 'Chakra UI', 'TypeScript'],
+      images: [
+        { img: lv1 },
+        { img: lv2 },
       ],
       left: true,
     },
