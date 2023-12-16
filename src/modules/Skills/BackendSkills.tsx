@@ -10,7 +10,7 @@ import mongodbIcon from '@/assets/mongodb-icon.png'
 import { useInView } from 'react-intersection-observer'
 import { motion, useAnimation } from 'framer-motion'
 
-const FrontendSkills: FC = () => {
+const BackendSkills: FC = () => {
   const control = useAnimation()
   const [refInitial, inViewInitial] = useInView()
   const [ref, inView] = useInView()
@@ -97,4 +97,4 @@ const FrontendSkills: FC = () => {
   )
 }
 
-export default FrontendSkills
+export default BackendSkills

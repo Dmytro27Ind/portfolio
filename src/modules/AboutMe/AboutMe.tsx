@@ -36,12 +36,12 @@ const AboutMe: FC = () => {
     >
       <div className='w-full md:w-4/12 flex flex-col gap-y-14'>
         <h2 className='text-center md:text-left h2-title'>
-          I love building web applications
+          I like to build apps and cloud infrastructure
         </h2>
         <h3 className='text-lm-secondaryText dark:text-dm-secondaryText text-lg md:text-xl'>
-          I am frontend / backend developer and student at the Technical University of Kosice.
+          I am fullstack developer and student at the Technical University of Kosice.
           I spend most of my free time to improve my programming skills.
-          I'm learning React, Angular, TypeScript, NodeJS and English.
+          I'm currently learning Amazon Web Services (AWS), Docker, NodeJS and English.
         </h3>
       </div>
       <div className='w-full md:w-5/12 flex items-center mt-10'>

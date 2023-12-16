@@ -43,10 +43,10 @@ const LeftDrawer: FC = () => {
           </DrawerHeader>
 
           <DrawerBody className='flex flex-col gap-5 mt-8'>
-            <Link className='text-lg' href='#about-me'>About Me</Link>
-            <Link className='text-lg' href='#education'>Education</Link>
-            <Link className='text-lg' href='#skills'>Skills</Link>
-            <Link className='text-lg' href='#projects'>Projects</Link>
+            <Link className='text-lg' to='#about-me'>About Me</Link>
+            <Link className='text-lg' to='#education'>Education</Link>
+            <Link className='text-lg' to='#skills'>Skills</Link>
+            <Link className='text-lg' to='#projects'>Projects</Link>
           </DrawerBody>
 
           <DrawerFooter>

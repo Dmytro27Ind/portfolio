@@ -1,11 +1,14 @@
 import React, { FC } from 'react'
 import { twMerge } from 'tailwind-merge'
+import { Link as RouterLink } from 'react-router-dom'
 
 interface LinkProps extends React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>{
-  newTab?: boolean
+  newTab?: boolean,
+  to: string,
+  ref?: React.RefObject<HTMLAnchorElement>,
 }
 
-const Link: FC<LinkProps> = ({children, newTab=false, className, ...props}) => {
+const Link: FC<LinkProps> = ({children, newTab= false, className, ...props}) => {
   const classes = twMerge(
     'text-lm-primaryText dark:text-dm-primaryText text-base hover:shadow-[0_1px_0_0_currentcolor]',
     'transition ease-in-out duration-300',
@@ -15,9 +18,9 @@ const Link: FC<LinkProps> = ({children, newTab=false, className, ...props}) => {
   return (
     <React.Fragment>
       {newTab?
-        <a className={classes} {...props} target="_blank" rel="noopener noreferrer">{children}</a>
+        <RouterLink className={classes} {...props} target="_blank" rel="noopener noreferrer">{children}</RouterLink>
       :
-        <a className={classes} {...props}>{children}</a>
+        <RouterLink className={classes} {...props}>{children}</RouterLink>
       }
     </React.Fragment>
   )

@@ -24,13 +24,22 @@ const Experience: FC = () => {
       else if (isScrollingUp)
         control.start("scrollingUp");
     }
+    // eslint-disable-next-line
   }, [control, inView])
 
   const items: StepperItem[] = [
     {
+      time: '9 months',
+      range: '2023-Present',
+      title: 'CDESK',
+      link: 'https://www.cdesk.sk/',
+      description: 'As a Full Stack Developer at CDESK, I specialize in both frontend and backend development. My responsibilities include working with Angular and TypeScript/JavaScript for frontend tasks, websockets with Node.js for real-time communication, and PHP for backend development.'
+    },
+    {
       time: '1 year',
-      title: 'Full Stack Developer',
-      description: 'Freelance. Depending on the project, I was responsible for the frontend, backend and design. Frontend in React or native HTML/CSS. Backend in NodeJS/Express, design in Figma.'
+      range: '2022-2023',
+      title: 'Freelance Web',
+      description: 'Freelance. Depending on the project, I was responsible for the frontend, backend and design. Frontend in native HTML/CSS or React. Backend in NodeJS/Express or PHP, design in Figma.'
     }
   ]
 
@@ -42,7 +51,7 @@ const Experience: FC = () => {
         variants={variant}
         animate={control}
       >
-        <h2 className='h2-title mb-12 sm:mb-20'>Experience</h2>
+        <h2 className='h2-title mb-12 sm:mb-20'>Work Experience</h2>
         <motion.div ref={ref}></motion.div>
         <Stepper items={items} />
       </motion.div>

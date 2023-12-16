@@ -1,8 +1,9 @@
-import React, { FC, useState, useEffect } from 'react'
+import React, {FC, useEffect, useState} from 'react'
 import Calendar from 'react-github-contribution-calendar'
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
+import contributionData from './contributionCalendar.json'
 
 interface GithubUserData {
   user: {
@@ -20,13 +21,12 @@ function getDateNow() {
   const year = today.getFullYear();
   const month = String(today.getMonth() + 1).padStart(2, '0');
   const day = String(today.getDate()).padStart(2, '0');
-  const formattedDate = `${year}-${month}-${day}`;
-  return formattedDate
+  return `${year}-${month}-${day}`
 }
 
 const GithubCalendar: FC = () => {
   const theme = useSelector<RootState>((state) => state.theme.theme)
-  const [data, setData] = useState<GithubUserData>();
+  const [data, setData] = useState<GithubUserData>(contributionData as any);
   const [values, setValues] = useState<any>({});
   const [total, setTotal] = useState<number>(0)
   let until = getDateNow();

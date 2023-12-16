@@ -4,10 +4,24 @@ import vs1 from '@/assets/vs1.png'
 import vs2 from '@/assets/vs2.png'
 import vs3 from '@/assets/vs3.png'
 import lv1 from '@/assets/livesta-1.png'
-import lv2 from '@/assets/livesta-2.png'
+import lv2 from '@/assets/cdesk-1.png'
+import cd1 from '@/assets/cdesk-1.png'
+import cd2 from '@/assets/cdesk-2.jpg'
+import cd3 from '@/assets/cdesk-3.jpg'
 
 const MyProjects = () => {
   const projects: ProjectProps[] = [
+    {
+      title: 'CDESK',
+      description: 'CDESK is an excellent helpdesk tool for any company or institution. It is an important tool for digitizing processes thanks to its built-in modules and the possibility of interfacing with other software.',
+      link: 'https://www.cdesk.eu/',
+      tags: ['Angular', 'TypeScript', 'js', 'php', 'Node.js'],
+      images: [
+        { img: cd1 },
+        { img: cd2 },
+        { img: cd3 },
+      ],
+    },
     {
       title: 'Viibes Study',
       description: 'The project for admission to Slovakia is free for foreign students. I worked as a freelancer on this project.',
@@ -17,6 +31,16 @@ const MyProjects = () => {
         { img: vs1 },
         { img: vs2 },
         { img: vs3 },
+      ],
+    },
+    {
+      title: 'Cloud Guard',
+      description: 'This project aims to propose a solution for securing data in cloud storage to prevent unauthorized access by providers.',
+      link: 'https://auth.cloud-guard.app/',
+      tags: ['AWS', 'AWS S3', 'AWC VPC', 'Angular', 'TypeScript'],
+      images: [
+        { img: 'https://raw.githubusercontent.com/Dmytro27Ind/images/main/cloud-guard-client-2.png' },
+        { img: 'https://raw.githubusercontent.com/Dmytro27Ind/images/main/cloud-guard-client-1.png' },
       ],
     },
     {

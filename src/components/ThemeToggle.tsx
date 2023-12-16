@@ -20,7 +20,7 @@ const ThemeToggle: FC<ThemeToggleProps> = ({ onDarkClick, onLightClick, size='me
   const textSize = {small: 'text-sm', medium: 'text-base', large: 'text-lg'}
 
   return (
-    <ButtonGroup className={className} size={size}>
+    <ButtonGroup className={className + ' rounded-full'} size={size}>
       <Button
         className={(theme === 'light'? 'bg-lm-primary-200' : '') + ' ' + textSize[size]}
         onClick={onLightClick}

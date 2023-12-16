@@ -3,7 +3,9 @@ import classes from './Stepper.module.scss'
 
 export interface StepperItem {
   time: string,
+  range?: string,
   title: string,
+  link?: string,
   description: string,
 }
 
@@ -21,15 +23,22 @@ const Stepper: FC<StepperProps> = ({items, className, ...props}) => {
             " before:dark:bg-dm-primary-100 after:dark:bg-dm-primary-100 after:dark:border-dm-primary-100"
           }>
             <h3 className="font-bold mb-2 text-lm-primaryText dark:text-dm-primaryText text-lg">
-              {item.title}
+              <a href={item.link} className={ item.link ? "underline underline-offset-2" : "" } target="_blank" rel="noopener noreferrer">
+                {item.title}
+              </a>
             </h3>
             <p className="text-lm-secondaryText dark:text-dm-secondaryText">
               {item.description}
             </p>
           </div>
-          <time className={classes.time + " text-lm-secondaryText dark:text-dm-secondaryText basis-16 sm:basis-36 text-left sm:text-right"}>
-            {item.time}
-          </time>
+          <div className="flex flex-col basis-16 sm:basis-36">
+            <time className={classes.time + " text-lm-secondaryText dark:text-dm-secondaryText text-left sm:text-right pb-0"}>
+              {item.time}
+            </time>
+            <time className={classes.time + " text-lm-secondaryText dark:text-dm-secondaryText text-left sm:text-right"}>
+              {item.range}
+            </time>
+          </div>
         </li>
       )}
     </ol>

@@ -29,11 +29,11 @@ const AppNavbar = () => {
             />
           }
         >
-          <Link href='#about-me'>About Me</Link>
-          <Link href='#experience'>Experience</Link>
-          <Link href='#education'>Education</Link>
-          <Link href='#skills'>Skills</Link>
-          <Link href='#projects'>Projects</Link>
+          <Link to='#about-me'>About Me</Link>
+          <Link to='#experience'>Work Experience</Link>
+          <Link to='#education'>Education</Link>
+          <Link to='#skills'>Skills</Link>
+          <Link to='#projects'>Projects</Link>
         </Navbar>
         <LeftDrawer />
       </div>

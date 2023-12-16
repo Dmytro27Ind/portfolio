@@ -24,6 +24,7 @@ const Education: FC = () => {
       else if (isScrollingUp)
         control.start("scrollingUp");
     }
+    // eslint-disable-next-line
   }, [control, inView])
 
   const items: StepperItem[] = [

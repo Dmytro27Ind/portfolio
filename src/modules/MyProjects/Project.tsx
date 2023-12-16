@@ -2,7 +2,6 @@ import React, { FC, useEffect, useState } from 'react'
 import Chip from '@/UI/Chip'
 import Link from '@/UI/Link'
 import Carousel from "nuka-carousel"
-import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md'
 import { BsGithub } from 'react-icons/bs'
 import IconButton from '@/UI/IconButton'
 import { motion, useAnimation } from 'framer-motion'
@@ -63,7 +62,7 @@ const Project: FC<ProjectProps> = ({title, description, link, git, tags, images,
             {description}
         </p>
         {link &&
-          <Link className='text-lg sm:text-xl lg:text-2xl font-semibold' href={link} newTab>
+          <Link className='text-lg sm:text-xl lg:text-2xl font-semibold' to={link} newTab>
             Link to Website
           </Link>
         }

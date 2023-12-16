@@ -21,7 +21,7 @@ const Header: FC = () => {
           <div className='font-bold'>Bc. Dmytro Kagirov</div>
         </h1>
         <h2 className='font-semibold md:font-normal text-xl md:text-3xl lg:text-4xl text-lm-secondaryText dark:text-dm-secondaryText'>
-          Full Stack Developer, Student
+          Full Stack Developer
         </h2>
         <div className='flex items-center flex-col md:flex-row gap-2 md:gap-1 mt-12'>
           <Chip className='w-fit'>

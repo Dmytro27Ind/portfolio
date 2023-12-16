@@ -10,6 +10,7 @@ import Skills from './modules/Skills'
 import ParallaxBg from './modules/ParallaxBg';
 import MyProjects from './modules/MyProjects';
 import Experience from './modules/Experience';
+import ScrollToAnchor from "@/components/ScrollToAnchor";
 
 
 function App() {
@@ -30,6 +31,10 @@ function App() {
         </div>
         <ParallaxBg />
       </div>
+
+      {/* Scroll to anchor element solution */}
+      <ScrollToAnchor />
+
     </ParallaxProvider>
   )
 }
