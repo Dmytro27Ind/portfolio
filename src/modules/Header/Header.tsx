@@ -37,7 +37,7 @@ const Header: FC = () => {
         </div>
         <div className='flex gap-3 mt-4'>
           <IconButton href='https://github.com/Dmytro27Ind' newTab icon={<BsGithub className='w-8 h-8' />} />
-          <IconButton href='https://www.linkedin.com/in/dmytro-kagirov-a29394266/' newTab icon={<BsLinkedin className='w-8 h-8' />} />
+          <IconButton href='https://www.linkedin.com/in/dmytro-kagirov/' newTab icon={<BsLinkedin className='w-8 h-8' />} />
           <IconButton href='https://www.facebook.com/dmytro.kagirov.1' newTab icon={<BsFacebook className='w-8 h-8' />} />
         </div>
       </motion.div>
