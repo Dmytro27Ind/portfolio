@@ -32,6 +32,7 @@ const MyProjects = () => {
         { img: vs2 },
         { img: vs3 },
       ],
+      left: true,
     },
     {
       title: 'Cloud Guard',
